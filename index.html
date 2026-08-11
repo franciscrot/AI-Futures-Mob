@@ -788,7 +788,29 @@
           box-sizing: border-box; width: calc(100% - 20px);
           max-height: calc(100svh - 20px); padding: 1.25rem; gap: 1rem;
         }
-        .choice-modal-content { max-height: calc(100svh - 20px); padding: 1.1rem; }
+        #choiceModal {
+          box-sizing: border-box;
+          width: 100vw;
+          max-width: 100vw;
+          padding: 10px;
+          overflow-x: hidden;
+        }
+        .choice-modal-content {
+          width: 100%;
+          max-width: 100%;
+          max-height: calc(100svh - 20px);
+          padding: 1.1rem;
+        }
+        .choice-modal-content h2,
+        #choiceModalQuestion,
+        .choice-modal-option {
+          overflow-wrap: anywhere;
+        }
+        .choice-modal-option {
+          box-sizing: border-box;
+          max-width: 100%;
+          white-space: normal;
+        }
       }
     </style>
   </head>
