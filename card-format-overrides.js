@@ -18,6 +18,27 @@
     #tooltipsToggle {
       display: none !important;
     }
+
+    @media (max-width: 768px) {
+      #choiceModal {
+        align-items: flex-start;
+        height: 100vh;
+        height: 100dvh;
+        max-height: 100vh;
+        max-height: 100dvh;
+        overflow-y: auto;
+        padding-top: max(10px, env(safe-area-inset-top));
+        padding-bottom: max(10px, env(safe-area-inset-bottom));
+        overscroll-behavior: contain;
+      }
+
+      .choice-modal-content {
+        flex: 0 0 auto;
+        margin: 0;
+        max-height: calc(100vh - 20px);
+        max-height: calc(100dvh - 20px);
+      }
+    }
   `;
   document.head.appendChild(style);
 
@@ -131,6 +152,30 @@
     handDiv.appendChild(cardDiv);
     scheduleScoreRailPosition();
   };
+
+  // Choice modals reuse the same scrollable panel. Reset both scroll containers
+  // whenever the modal opens so a previous long choice cannot reopen partway down.
+  const choiceModal = document.getElementById("choiceModal");
+  const choiceModalContent = choiceModal?.querySelector(".choice-modal-content");
+
+  function resetChoiceModalScroll() {
+    if (!choiceModal || choiceModal.getAttribute("aria-hidden") !== "false") return;
+
+    choiceModal.scrollTop = 0;
+    if (choiceModalContent) choiceModalContent.scrollTop = 0;
+
+    requestAnimationFrame(() => {
+      choiceModal.scrollTop = 0;
+      if (choiceModalContent) choiceModalContent.scrollTop = 0;
+    });
+  }
+
+  if (choiceModal) {
+    new MutationObserver(resetChoiceModalScroll).observe(choiceModal, {
+      attributes: true,
+      attributeFilter: ["aria-hidden", "style"],
+    });
+  }
 
   // Remove any tooltip left over from the original renderer, then refresh
   // the current card so the inline preparation note is immediately visible.
