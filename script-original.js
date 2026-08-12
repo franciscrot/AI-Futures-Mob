@@ -982,6 +982,20 @@ const CHOICE_TECHNOPHILIA_SCORES = {
   153: [1, -1],
   154: [-1, 1],
   155: [1, -1],
+  156: [1, -1],
+  157: [-1, 1],
+  158: [1, -1],
+  159: [-1, 1],
+  160: [-1, 1],
+  161: [1, -1],
+  162: [1, -1],
+  163: [1, -1],
+  164: [1, 0],
+  165: [-1, 1],
+  166: [-1, 1],
+  167: [-1, 1],
+  168: [0, -1],
+  169: [-1, 1],
 };
 
 const TECHNOPHILIA_CLASSIFICATIONS = {
@@ -1111,6 +1125,30 @@ const SUBPLOT_TREES = {
       "path-2-2": 154,
     },
   },
+  J: {
+    root: 156,
+    nodes: {
+      root: 156,
+      "path-1": 157,
+      "path-2": 158,
+      "path-1-1": 159,
+      "path-1-2": 160,
+      "path-2-1": 161,
+      "path-2-2": 162,
+    },
+  },
+  K: {
+    root: 163,
+    nodes: {
+      root: 163,
+      "path-1": 164,
+      "path-2": 165,
+      "path-1-1": 166,
+      "path-1-2": 167,
+      "path-2-1": 168,
+      "path-2-2": 169,
+    },
+  },
 };
 
 const SUBPLOT_IMAGE_PATHS_BY_CARD_ID = {
@@ -1177,6 +1215,20 @@ const SUBPLOT_IMAGE_PATHS_BY_CARD_ID = {
   152: "images/tarot-27.jpg",
   153: "images/tarot-27.jpg",
   154: "images/tarot-27.jpg",
+  156: "images/choice-34-connected-device.jpg",
+  157: "images/tarot-18.jpg",
+  158: "images/tarot-2.jpg",
+  159: "images/choice-33-earth-stars.jpg",
+  160: "images/art-wolf.jpg",
+  161: "images/art-storm.jpg",
+  162: "images/tarot-27.jpg",
+  163: "images/tarot-18.jpg",
+  164: "images/tarot-11.jpg",
+  165: "images/tarot-17.jpg",
+  166: "images/tarot-19.jpg",
+  167: "images/choice-34-connected-device.jpg",
+  168: "images/tarot-22.jpg",
+  169: "images/tarot-15.jpg",
 };
 
 const CARE_RELATIVES = [
@@ -2024,6 +2076,130 @@ const AUTHORED_SUBPLOTS = {
         options: [
           "Shared control is worth the friction.",
           "Every alternative eventually needs rules and rulers.",
+        ],
+      },
+    },
+  },
+  J: {
+    first: {
+      prompt:
+        "Your lease is ending. The city offers cheap space in a new district managed through an urban digital twin. Or you could admit that most of the organisation works perfectly well from home.",
+      options: [
+        "Take the office.",
+        "Go fully remote.",
+      ],
+    },
+    second: {
+      "path-1": {
+        prompt:
+          "Years later, the district is thriving. A city planner tells you she distrusts the twin. Some of its forecasts seem to produce the conditions they predict. Some of its inputs simply look wrong.",
+        options: [
+          "Probably some self-fulfilling prophecy.",
+          "Garbage in, garbage out.",
+        ],
+      },
+      "path-2": {
+        prompt:
+          "Your new working arrangements require new insurance. One provider offers a substantial discount if you install its advisory AI. It monitors operational risks, flags questionable decisions and recommends safer courses of action. It cannot make decisions itself.",
+        options: [
+          "Install it.",
+          "Pay the full premium.",
+        ],
+      },
+    },
+    third: {
+      "path-1-1": {
+        prompt:
+          "The twin predicts congestion; roads are improved; traffic rises. It predicts demand; investment follows; demand appears. Nothing seems to have been falsified. But the city increasingly resembles the model that describes it.",
+        options: [
+          "Treat forecasts as interventions.",
+          "That’s what useful models do.",
+        ],
+      },
+      "path-1-2": {
+        prompt:
+          "The planner keeps digging into the digital twin. A few months later, you hear she has died under entirely unsuspicious circumstances. An independent audit finds nothing wrong with the twin.",
+        options: [
+          "Is there such a thing as an unsuspicious event these days?",
+          "Set your nudge agent to help you shake your paranoia.",
+        ],
+      },
+      "path-2-1": {
+        prompt:
+          "The advisory AI is pretty good. Unfortunately, your insurer now wants explanations whenever you ignore it. After several incidents, the renewal quote arrives. Following the AI’s recommendations remains optional. So does affordable insurance.",
+        options: [
+          "Follow the advice.",
+          "Shop around.",
+        ],
+      },
+      "path-2-2": {
+        prompt:
+          "You kept the expensive human-only insurance policy. Your insurer announces that firms without advisory AI now form a distinct risk category. Your premium rises again. The email stresses that adoption remains entirely voluntary.",
+        options: [
+          "Fine. Install it.",
+          "Become uninsurable on principle.",
+        ],
+      },
+    },
+  },
+  K: {
+    first: {
+      prompt:
+        "Loomo replaces files, emails and messaging. Instead, everybody moves through a semantic space of projects, people and understandings. The demonstration is difficult to describe, which Loomo claims is the point.",
+      options: [
+        "Move the company onto Loomo.",
+        "Let someone else test it first.",
+      ],
+    },
+    second: {
+      "path-1": {
+        prompt:
+          "Loomo is working OK, although a lot of people are still using email. Maybe you should switch on one of the new features.",
+        options: [
+          "Translate body language into action points.",
+          "Spatialise AI around the office and distributed workplace.",
+        ],
+      },
+      "path-2": {
+        prompt:
+          "Some companies are experimenting with Nopetech, AI that occasionally says no.",
+        options: [
+          "Let’s give it a whirl.",
+          "No, it’ll never catch on.",
+        ],
+      },
+    },
+    third: {
+      "path-1-1": {
+        prompt:
+          "You receive a petition of no confidence from your staff. It turns out to have been automatically generated from a swarm of raised eyebrows and grimaces.",
+        options: [
+          "Puff out your cheeks in exasperation.",
+          "Bite your lip and grin.",
+        ],
+      },
+      "path-1-2": {
+        prompt:
+          "Loomo distributes AI through the workplace. Different rooms, desks and remote spaces develop different capabilities and institutional memories. AI is no longer equally available everywhere.",
+        options: [
+          "This is about preserving friction. Walking somewhere makes us think before using AI.",
+          "This is about removing friction. We feel more at home when different knowledge dwells in different places.",
+        ],
+      },
+      "path-2-1": {
+        prompt:
+          "Your AI is insubordinate by design. The supplier asks you to choose why.",
+        options: [
+          "To ensure people remember how to think for themselves.",
+          "To reduce energy and carbon costs.",
+        ],
+      },
+      "path-2-2": {
+        prompt:
+          "You retain an AI that always responds. The next update speculatively performs likely requests before anyone makes them, retaining whatever appears useful. Each morning brings work nobody commissioned.",
+        options: [
+          "Can we turn that off?",
+          "Can we turn that up?",
         ],
       },
     },
